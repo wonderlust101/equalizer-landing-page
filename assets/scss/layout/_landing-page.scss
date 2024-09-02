@@ -3,15 +3,15 @@
 .landing-page {
   display: grid;
   justify-items: center;
-  background: url('../images/bg-main-mobile.png') top -10rem right -16rem no-repeat;
+  background: url('../images/bg-main-mobile.png') top -10rem right -16rem no-repeat var(--clr-background);
 
   @include a.breakpoint(medium) {
-    background: url('../images/bg-pattern-1.svg') no-repeat right -3rem top -3rem, url('../images/bg-main-tablet.png') no-repeat top -16rem center;
+    background: url('../images/bg-pattern-1.svg') no-repeat right -3rem top -3rem, url('../images/bg-main-tablet.png') no-repeat top -16rem center var(--clr-background);
     background-size: 16rem, auto;
   }
 
   @include a.breakpoint(large) {
-    background: url('../images/bg-pattern-1.svg') no-repeat right top, url('../images/bg-main-desktop.png') no-repeat top -16rem center;
+    background: url('../images/bg-pattern-1.svg') no-repeat right top, url('../images/bg-main-desktop.png') no-repeat top -16rem center var(--clr-background);
     background-size: 20rem, auto;
   }
 
@@ -20,7 +20,7 @@
     justify-items: center;
 
     @include a.breakpoint(medium){
-      width: min(90%, 110rem);
+      width: min(80%, 110rem);
     }
   }
 
@@ -105,6 +105,7 @@
     display: grid;
     gap: 3rem;
     padding: 4rem 10% 7rem;
+    color: var(--clr-white);
     background-color: var(--clr-primary-color-orange);
 
     @include a.breakpoint(medium) {
@@ -120,6 +121,10 @@
   &__pricing-text {
     display: grid;
     gap: 1.5rem;
+
+    & > * {
+      color: var(--clr-white);
+    }
   }
 
   &__pricing-rate {
@@ -127,6 +132,7 @@
     align-items: center;
     gap: 1rem;
     font-size: 1.25rem;
+    color: var(--clr-white);
   }
 
   &__pricing-cost {
