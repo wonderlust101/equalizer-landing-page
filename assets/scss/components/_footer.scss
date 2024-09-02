@@ -1,0 +1,45 @@
+@use  '../abstract' as a;
+
+.footer {
+  display: grid;
+  @include a.set-grid-areas(logo, copyright, socials);
+  gap: 2rem;
+  padding: 4rem 10% 5rem;
+  width: 100%;
+
+  @include a.breakpoint(medium) {
+    grid-template:
+      'logo logo'
+      'copyright socials' / auto max-content;
+  }
+
+  @include a.breakpoint(large) {
+    gap: 8rem;
+    grid-template:
+      'logo copyright socials'/ max-content auto max-content;
+  }
+
+  &__link {
+    display: block;
+    line-height: 1.5;
+
+    &:hover{
+      color: var(--clr-primary-color-orange);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-self: center;
+    gap: 2rem;
+    height: 1.25rem;
+
+    & > * {
+      color: var(--clr-black);
+
+      &:hover{
+        color: var(--clr-primary-color-orange);
+      }
+    }
+  }
+}

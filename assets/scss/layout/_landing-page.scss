@@ -1,0 +1,141 @@
+@use '../abstract' as a;
+
+.landing-page {
+  display: grid;
+  justify-items: center;
+  background: url('../images/bg-main-mobile.png') top -10rem right -16rem no-repeat;
+
+  @include a.breakpoint(medium) {
+    background: url('../images/bg-pattern-1.svg') no-repeat right -3rem top -3rem, url('../images/bg-main-tablet.png') no-repeat top -16rem center;
+    background-size: 16rem, auto;
+  }
+
+  @include a.breakpoint(large) {
+    background: url('../images/bg-pattern-1.svg') no-repeat right top, url('../images/bg-main-desktop.png') no-repeat top -16rem center;
+    background-size: 20rem, auto;
+  }
+
+  &__content {
+    display: grid;
+    justify-items: center;
+
+    @include a.breakpoint(medium){
+      width: min(90%, 110rem);
+    }
+  }
+
+  &__intro {
+    display: grid;
+    gap: 2.5rem;
+    padding: 0 10% 4rem;
+
+    @include a.breakpoint(medium) {
+      justify-self: flex-start;
+    }
+
+    &--header {
+      max-width: 30rem;
+
+      @include a.breakpoint(large) {
+        max-width: 80%;
+      }
+    }
+
+    &--body {
+      max-width: 30rem;
+
+      @include a.breakpoint(large) {
+        max-width: 46rem;
+      }
+    }
+  }
+
+  &__content-overlap {
+    display: grid;
+    justify-items: center;
+    position: relative;
+    width: 100%;
+
+    @include a.breakpoint(medium) {
+
+    }
+  }
+
+  &__phone {
+    margin-top: 8.5rem;
+    width: 100%;
+    height: 22.5rem;
+    position: relative;
+    background: url('../images/bg-pattern-2.svg') var(--clr-black) no-repeat top;
+    background-size: 20rem;
+
+    @include a.breakpoint(medium) {
+      margin: 12.5rem 0;
+      height: 37.5rem;
+      border-radius: 0.75rem;
+      background-position: top left;
+    }
+
+    @include a.breakpoint(large) {
+      background-position: top left 27.5%;
+    }
+  }
+
+  &__phone-image {
+    position: absolute;
+    left: 50%;
+    bottom: 4rem;
+    width: 13rem;
+    transform: translate(-50%, 0);
+
+    @include a.breakpoint(medium) {
+      width: 17rem;
+      bottom: unset;
+      top: -7.25rem;
+      left: 2.75rem;
+      transform: translate(0, 0);
+    }
+
+    @include a.breakpoint(large) {
+      left: 6.25rem;
+    }
+  }
+
+  &__pricing {
+    display: grid;
+    gap: 3rem;
+    padding: 4rem 10% 7rem;
+    background-color: var(--clr-primary-color-orange);
+
+    @include a.breakpoint(medium) {
+      position: absolute;
+      padding: 3rem;
+      width: 55%;
+      border-radius: 0.75rem;
+      top: 16.5rem;
+      right: 4rem;
+    }
+  }
+
+  &__pricing-text {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__pricing-rate {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.25rem;
+  }
+
+  &__pricing-cost {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  &__buttons {
+    display: grid;
+    gap: 1rem;
+  }
+}
